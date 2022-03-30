@@ -1,0 +1,29 @@
+<%= form_with model: employee do |form|%>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :job %><br>
+    <%= form.text_field :job %>
+  </div>
+
+  <div>
+    <%= form.label :department %><br>
+    <%= form.text_field :department %>
+  </div>
+
+  <div>
+    <%= form.label :salary %><br>
+    <%= form.number_field :salary %>
+  </div>
+
+  <div>
+    <%= form.label :hire_date %><br>
+    <%= form.date_field :hire_date %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+  <% end %>

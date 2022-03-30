@@ -1,0 +1,11 @@
+<h1>Employees</h1>
+<ol>
+<% @employees.each do |employee| %>
+  <li>
+    <%= link_to employee.name, employee_path(employee) %><br>
+    <%= link_to "Edit", edit_employee_path(employee) %>
+    <%= link_to "Delete", employee_path(employee), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </li>
+<% end %>
+</ol>
+<%= link_to "New Employee", new_employee_path %>

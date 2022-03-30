@@ -1,0 +1,9 @@
+<%= @employee.name %><br>
+<%= @employee.job %><br>
+<%= @employee.department %><br>
+<%= @employee.salary %><br>
+<%= @employee.hire_date %><br>
+
+<%= link_to "Edit", edit_employee_path(@employee) %><br>
+<%= link_to "Delete", employee_path(@employee), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %><br>
+<%= link_to "Back", root_path %>
