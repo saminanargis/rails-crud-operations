@@ -1,29 +1,32 @@
 <%= form_with model: employee do |form|%>
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :job %><br>
-    <%= form.text_field :job %>
+  <div class="mb-3">
+    <%= form.label :job, class: "form-label" %>
+    <%= form.text_field :job, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :department %><br>
-    <%= form.text_field :department %>
+  <div class="mb-3">
+    <%= form.label :department, class: "form-label" %>
+    <%= form.text_field :department, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :salary %><br>
-    <%= form.number_field :salary %>
+  <div class="mb-3">
+    <%= form.label :salary, class: "form-label" %>
+    <%= form.number_field :salary, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :hire_date %><br>
-    <%= form.date_field :hire_date %>
+  <div class="mb-3">
+    <%= form.label :hire_date, class: "form-label" %>
+    <%= form.date_field :hire_date, class: "form-control" %>
   </div>
-  <div>
-    <%= form.submit %>
+  <div class="mb-3 d-flex justify-content-between">
+    <%= form.submit class: "btn btn-primary order-1" %>
+    <%= link_to root_path, class: "btn btn-primary order-0" do %>
+      <i class="bi bi-arrow-left-short"></i> Back
+    <% end %>
   </div>
   <% end %>

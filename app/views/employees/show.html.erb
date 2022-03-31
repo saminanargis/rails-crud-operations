@@ -1,9 +1,38 @@
-<%= @employee.name %><br>
-<%= @employee.job %><br>
-<%= @employee.department %><br>
-<%= @employee.salary %><br>
-<%= @employee.hire_date %><br>
+<div class="row">
+  <div class="col col-md-7 mx-auto">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h3 class="text-center my-3">Employee Details</h3>
+      </div>
+      <div class="card-body">
+        <dl class="row">
+          <dt class="col-sm-3">Name:</dt>
+          <dd class="col-sm-9"><%= @employee.name %></dd>
 
-<%= link_to "Edit", edit_employee_path(@employee) %><br>
-<%= link_to "Delete", employee_path(@employee), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %><br>
-<%= link_to "Back", root_path %>
+          <dt class="col-sm-3">Job:</dt>
+          <dd class="col-sm-9"><%= @employee.job %></dd>
+
+          <dt class="col-sm-3">Department:</dt>
+          <dd class="col-sm-9"><%= @employee.department %></dd>
+
+          <dt class="col-sm-3 text-truncate">Salary:</dt>
+          <dd class="col-sm-9"><%= @employee.salary %></dd>
+
+          <dt class="col-sm-3 text-truncate">Hire Date:</dt>
+          <dd class="col-sm-9"><%= @employee.hire_date %></dd>
+        </dl>
+      </div>
+      <div class="card-footer d-flex justify-content-center gap-1">
+        <%= link_to root_path, class: "btn btn-primary" do %>
+          <i class="bi bi-arrow-left-short"></i> Back
+        <% end %>
+        <%= link_to edit_employee_path(@employee), class: "btn btn-success" do %>
+          <i class="bi bi-pencil-square"></i> Edit
+        <% end %>
+        <%= link_to employee_path(@employee), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" do %>
+          <i class="bi bi-trash"></i> Delete
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
