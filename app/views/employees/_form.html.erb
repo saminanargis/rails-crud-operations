@@ -1,27 +1,39 @@
 <%= form_with model: employee do |form|%>
+
+  <% if employee.errors.any? %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <% employee.errors.each do |error| %>
+        <div>
+          <%= error.full_message %>
+        </div>
+      <% end %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
   <div class="mb-3">
     <%= form.label :name, class: "form-label" %>
-    <%= form.text_field :name, class: "form-control" %>
+    <%= form.text_field :name, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :job, class: "form-label" %>
-    <%= form.text_field :job, class: "form-control" %>
+    <%= form.text_field :job, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :department, class: "form-label" %>
-    <%= form.text_field :department, class: "form-control" %>
+    <%= form.text_field :department, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :salary, class: "form-label" %>
-    <%= form.number_field :salary, class: "form-control" %>
+    <%= form.number_field :salary, class: "form-control", required: true, min: 0 %>
   </div>
 
   <div class="mb-3">
     <%= form.label :hire_date, class: "form-label" %>
-    <%= form.date_field :hire_date, class: "form-control" %>
+    <%= form.date_field :hire_date, class: "form-control", required: true %>
   </div>
   <div class="mb-3 d-flex justify-content-between">
     <%= form.submit class: "btn btn-primary order-1" %>
